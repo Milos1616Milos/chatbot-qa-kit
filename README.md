@@ -22,6 +22,8 @@ Two more editable examples are in [`examples/`](examples/):
 
 These files contain placeholder URLs and sample answers. Running them without `--live` does not contact a website.
 
+Using n8n? Follow the [step-by-step chatbot webhook regression check](docs/n8n-chatbot-regression-check.md).
+
 ## Check your own chatbot endpoint
 
 1. Copy `example.json` to a **private** file such as `my-chatbot.json`.
