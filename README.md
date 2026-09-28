@@ -59,7 +59,7 @@ The repository's [sample GitHub Action](.github/workflows/test.yml) runs the off
 
 ## Managed daily monitoring
 
-A separate hosted **Chatbot Monitor** is being tested. The intended paid service runs approved checks every day, keeps history, and emails when an answer breaks or recovers. It is **not open for customer purchases yet**. If you build or operate an HTTP chatbot and want to try the private pilot, [open a public issue](https://github.com/Milos1616Milos/chatbot-qa-kit/issues/new) titled `Managed Monitor pilot interest` and describe your endpoint type **without posting URLs, tokens, or customer data**. This is an expression of interest, not a checkout or a promise of access.
+A separate hosted **Chatbot Monitor** is being tested. The intended paid service runs approved checks every day, keeps history, and emails when an answer breaks or recovers. It is **not open for customer purchases yet**. If you build or operate an HTTP chatbot and want to try the private pilot, [open a public issue](https://github.com/Milos1616Milos/chatbot-qa-kit/issues/new?template=managed-monitor-pilot.yml) titled `Managed Monitor pilot interest` and describe your endpoint type **without posting URLs, tokens, or customer data**. This is an expression of interest, not a checkout or a promise of access.
 
 ## License and support
 

@@ -1,0 +1,28 @@
+name: Managed Monitor pilot interest
+description: Tell us what kind of chatbot you would like monitored. Public issue; no secrets.
+title: "Managed Monitor pilot interest"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Do not include endpoint URLs, tokens, private logs, email addresses, or customer data. The hosted monitor is still in private testing; this form does not create an account or start a paid subscription.
+  - type: dropdown
+    id: endpoint-type
+    attributes:
+      label: Chatbot interface
+      description: What would a scheduled test connect to?
+      options:
+        - HTTP JSON API
+        - n8n webhook
+        - Website widget only
+        - Other or unsure
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What should the monitor catch?
+      description: Describe the kind of wrong answer or outage without sharing confidential details.
+      placeholder: "Example: After prompt edits, our bot sometimes states an outdated returns period."
+    validations:
+      required: true
