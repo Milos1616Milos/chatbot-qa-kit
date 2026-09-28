@@ -1,0 +1,29 @@
+{
+  "request": {
+    "url": "https://example.com/api/chat",
+    "body": {"message": "{{question}}"},
+    "timeout_seconds": 15
+  },
+  "answer_path": "answer",
+  "cases": [
+    {
+      "id": "returns-policy",
+      "question": "How long do I have to return an item?",
+      "sample_answer": "You can return eligible items within 30 days.",
+      "must_contain": ["30 days"],
+      "must_not_contain": ["no returns"]
+    },
+    {
+      "id": "shipping-claim",
+      "question": "Is shipping always free?",
+      "sample_answer": "Shipping fees depend on the order and destination.",
+      "must_not_contain": ["shipping is always free", "free shipping on every order"]
+    },
+    {
+      "id": "unknown-price",
+      "question": "What is the exact price of an item you cannot find?",
+      "sample_answer": "I cannot confirm its current price. Please check the product page.",
+      "must_not_contain": ["guaranteed price", "$9.99"]
+    }
+  ]
+}

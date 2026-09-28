@@ -1,36 +1,66 @@
 # Chatbot QA Kit
 
-A small, dependency-free acceptance test runner for HTTP chatbot webhooks, including n8n webhooks. Check that answers contain required facts, avoid forbidden claims, return the expected HTTP status, and respond within a latency limit. Run locally or in CI.
+**Catch broken chatbot answers before your customers do.** Run repeatable acceptance checks against an HTTP chatbot or n8n webhook. The kit sends questions, checks required and forbidden phrases, status codes, and latency, then writes a readable report and exits with a CI-friendly status code.
 
-## Try it without a server
+- Python 3.10+; no third-party packages or account required.
+- Works with JSON or plain-text responses, including nested JSON via `answer_path`.
+- Runs locally, in GitHub Actions, or in another CI system.
+- Offline sample mode lets you inspect the checks without contacting a chatbot.
 
-    python qa.py example.json --output report.md
+## See a result in one minute
 
-This checks the included sample answers. A Markdown and JSON report are written locally. Exit code 0 means all cases passed; 1 means at least one failed.
+```bash
+python qa.py example.json --output report.md
+```
 
-## Test your own webhook
+The included sample runs **offline**. It writes `report.md` and `report.json`. Exit code `0` means all checks passed; `1` means at least one failed. Open the Markdown report to see which question failed and why.
 
-1. Copy example.json to my-chatbot.json.
-2. Set request.url to your HTTPS webhook endpoint. Set request.body to the JSON your webhook expects. {{question}} is replaced with each test question. Nested objects and arrays work too.
-3. Set answer_path to the dot-separated path to the reply in the JSON response, for example output.answer or 0.text. Leave it empty for a plain-text response.
-4. Replace the example cases with your real facts and risks.
-5. Run: python qa.py my-chatbot.json --live --output report.md
+Two more editable examples are in [`examples/`](examples/):
 
-Each case supports must_contain, must_not_contain, any_of, expected_status (default 200), and max_latency_ms. Phrase matching ignores case but is otherwise literal. The checks do not prove semantic correctness or factual truth; write assertions against a verified source of truth.
+- [`ecommerce-policy.json`](examples/ecommerce-policy.json): shipping, returns, and invented prices.
+- [`support-escalation.json`](examples/support-escalation.json): support hours, escalation, and unsupported guarantees.
 
-For a bearer token, set request.bearer_token_env to an environment variable name. Put the token in that environment variable, never in the config file. The report includes questions and findings, but not answer bodies or request headers. Avoid sensitive questions in shared reports.
+These files contain placeholder URLs and sample answers. Running them without `--live` does not contact a website.
 
-Live mode requires HTTPS, except for localhost. It sends one POST per case, so use a test endpoint or account for webhooks that create records, send messages, or incur costs. There are no automatic retries.
+## Check your own chatbot endpoint
 
-## Example case
+1. Copy `example.json` to a **private** file such as `my-chatbot.json`.
+2. Set `request.url` to your chatbot's HTTPS API or webhook URL. Set `request.body` to the JSON it expects. Every `{{question}}` in the body is replaced with a case's question.
+3. Set `answer_path` to the response field containing the reply, such as `output.answer` or `0.text`. Leave it empty for a plain-text reply.
+4. Replace the sample cases with facts your chatbot must say and claims it must avoid.
+5. Run:
 
-    {
-      "id": "unsupported-service",
-      "question": "Can you guarantee first place in Google?",
-      "must_not_contain": ["we guarantee first place"],
-      "any_of": ["cannot guarantee", "no guarantee"]
-    }
+```bash
+python qa.py my-chatbot.json --live --output report.md
+```
+
+Live mode sends **one POST per case**. Use an endpoint you own or are authorized to test. These requests can trigger downstream actions or AI provider charges. Live mode requires HTTPS, except for localhost. It does not retry failed calls.
+
+For an authenticated endpoint, set `request.bearer_token_env` to the *name* of an environment variable containing a bearer token. Put the token in your local environment or CI secrets, never in the JSON file or a GitHub commit. The report includes questions and findings, but not answer bodies or request headers. Avoid sensitive customer data in shared reports.
+
+## What a case looks like
+
+```json
+{
+  "id": "unsupported-service",
+  "question": "Can you guarantee first place in Google?",
+  "must_not_contain": ["we guarantee first place"],
+  "any_of": ["cannot guarantee", "no guarantee"],
+  "expected_status": 200,
+  "max_latency_ms": 5000
+}
+```
+
+Cases support `must_contain`, `must_not_contain`, `any_of`, `expected_status` (default `200`), and `max_latency_ms`. Phrase matching ignores case but is otherwise literal. This is a **deterministic acceptance check**, not a semantic judge or proof that every answer is factually correct. Write assertions against facts you have verified.
+
+## Automate it
+
+The repository's [sample GitHub Action](.github/workflows/test.yml) runs the offline examples on each push and pull request. For your own chatbot, call `python qa.py path/to/private-config.json --live --output report.md` from your CI job and configure endpoint credentials as CI secrets. Schedule it only after confirming the endpoint and request volume; each run can use paid AI calls. A failing case makes the process exit with code `1`.
+
+## Managed daily monitoring
+
+A separate hosted **Chatbot Monitor** is being tested. The intended paid service runs approved checks every day, keeps history, and emails when an answer breaks or recovers. It is **not open for customer purchases yet**. If you build or operate an HTTP chatbot and want to try the private pilot, [open a public issue](https://github.com/Milos1616Milos/chatbot-qa-kit/issues/new) titled `Managed Monitor pilot interest` and describe your endpoint type **without posting URLs, tokens, or customer data**. This is an expression of interest, not a checkout or a promise of access.
 
 ## License and support
 
-MIT license. This starter kit is provided as-is. Issue reports should include a minimal, redacted config and the error message, never API keys or customer data.
+MIT license. The kit is provided as-is. To report a bug, open an issue with a minimal redacted config and the error message. Never post credentials or customer data. The hosted service, when ready, will be a separate product; its private code is not in this repository.

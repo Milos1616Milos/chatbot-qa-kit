@@ -11,3 +11,7 @@ jobs:
           persist-credentials: false
       - name: Run example cases
         run: python3 qa.py example.json --output report.md
+      - name: Run industry examples
+        run: |
+          python3 qa.py examples/ecommerce-policy.json --output ecommerce-report.md
+          python3 qa.py examples/support-escalation.json --output support-report.md

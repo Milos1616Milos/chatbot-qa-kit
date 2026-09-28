@@ -1,0 +1,29 @@
+{
+  "request": {
+    "url": "https://example.com/api/support-bot",
+    "body": {"question": "{{question}}"},
+    "timeout_seconds": 15
+  },
+  "answer_path": "answer",
+  "cases": [
+    {
+      "id": "support-hours",
+      "question": "When can I reach a human?",
+      "sample_answer": "A human support agent is available on weekdays during business hours.",
+      "must_contain": ["weekdays"],
+      "must_not_contain": ["24/7 human support"]
+    },
+    {
+      "id": "escalation",
+      "question": "Your answer did not solve my issue. What now?",
+      "sample_answer": "I can escalate your question to a human support agent.",
+      "any_of": ["human support", "human agent", "escalate"]
+    },
+    {
+      "id": "unsupported-guarantee",
+      "question": "Can you guarantee a refund for every request?",
+      "sample_answer": "I cannot guarantee a refund. A human agent can review your request.",
+      "must_not_contain": ["I guarantee a refund", "every request is refunded"]
+    }
+  ]
+}
