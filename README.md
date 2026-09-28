@@ -57,6 +57,26 @@ Cases support `must_contain`, `must_not_contain`, `any_of`, `expected_status` (d
 
 The repository's [sample GitHub Action](.github/workflows/test.yml) runs the offline examples on each push and pull request. For your own chatbot, call `python qa.py path/to/private-config.json --live --output report.md` from your CI job and configure endpoint credentials as CI secrets. Schedule it only after confirming the endpoint and request volume; each run can use paid AI calls. A failing case makes the process exit with code `1`.
 
+### Use it as a GitHub Action
+
+For an offline check in another repository, add this job to a workflow after committing your own JSON test configuration:
+
+```yaml
+name: Chatbot acceptance checks
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: Milos1616Milos/chatbot-qa-kit@v0.2.0
+        with:
+          config: tests/chatbot.json
+          live: 'false'
+```
+
+Set `live: 'true'` only for an endpoint you own or are authorized to test. Put credentials in GitHub Actions secrets and pass them as environment variables; never commit them. Each live run sends one POST per case and may incur provider charges.
+
 ## Managed daily monitoring
 
 A separate hosted **Chatbot Monitor** is being tested. The intended paid service runs approved checks every day, keeps history, and emails when an answer breaks or recovers. It is **not open for customer purchases yet**. If you build or operate an HTTP chatbot and want to try the private pilot, [open a public issue](https://github.com/Milos1616Milos/chatbot-qa-kit/issues/new?template=managed-monitor-pilot.yml) titled `Managed Monitor pilot interest` and describe your endpoint type **without posting URLs, tokens, or customer data**. This is an expression of interest, not a checkout or a promise of access.

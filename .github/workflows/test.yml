@@ -15,3 +15,8 @@ jobs:
         run: |
           python3 qa.py examples/ecommerce-policy.json --output ecommerce-report.md
           python3 qa.py examples/support-escalation.json --output support-report.md
+      - name: Verify reusable GitHub Action
+        uses: ./
+        with:
+          config: examples/ecommerce-policy.json
+          output: action-report.md

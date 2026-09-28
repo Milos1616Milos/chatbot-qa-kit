@@ -1,0 +1,37 @@
+name: Chatbot QA Kit
+description: Run deterministic acceptance checks for HTTP chatbot and n8n webhook responses.
+author: Milos1616Milos
+branding:
+  icon: check-circle
+  color: blue
+inputs:
+  config:
+    description: Path to a JSON test configuration in the caller repository.
+    required: true
+  live:
+    description: Set to true to send real POST requests to the configured chatbot endpoint.
+    required: false
+    default: 'false'
+  output:
+    description: Path for the Markdown report. A JSON report is written beside it.
+    required: false
+    default: chatbot-qa-report.md
+runs:
+  using: composite
+  steps:
+    - name: Run chatbot acceptance checks
+      shell: bash
+      env:
+        QA_CONFIG: ${{ inputs.config }}
+        QA_LIVE: ${{ inputs.live }}
+        QA_OUTPUT: ${{ inputs.output }}
+      run: |
+        set -euo pipefail
+        if [ "$QA_LIVE" = 'true' ]; then
+          python3 "$GITHUB_ACTION_PATH/qa.py" "$QA_CONFIG" --live --output "$QA_OUTPUT"
+        elif [ "$QA_LIVE" = 'false' ]; then
+          python3 "$GITHUB_ACTION_PATH/qa.py" "$QA_CONFIG" --output "$QA_OUTPUT"
+        else
+          echo 'live must be true or false' >&2
+          exit 2
+        fi
