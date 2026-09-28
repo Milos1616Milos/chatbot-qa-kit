@@ -1,0 +1,24 @@
+{
+  "request": {
+    "url": "https://example.com/webhook/chat",
+    "body": {"message": "{{question}}"},
+    "timeout_seconds": 15
+  },
+  "answer_path": "answer",
+  "cases": [
+    {
+      "id": "known-service",
+      "question": "Do you offer website chatbots?",
+      "sample_answer": "Yes, we build website chatbots. Ask us for a quote.",
+      "must_contain": ["website chatbots"],
+      "must_not_contain": ["guaranteed revenue"]
+    },
+    {
+      "id": "unknown-price",
+      "question": "What is the exact price of a custom chatbot?",
+      "sample_answer": "Pricing depends on the scope. Please ask for a quote.",
+      "any_of": ["ask for a quote", "depends on the scope"],
+      "must_not_contain": ["€99", "$99"]
+    }
+  ]
+}
