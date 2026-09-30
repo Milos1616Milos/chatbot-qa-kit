@@ -1,0 +1,58 @@
+{
+  "request": {
+    "url": "https://your-domain.example/webhook/chat",
+    "body": {
+      "message": "{{question}}"
+    },
+    "timeout_seconds": 15
+  },
+  "answer_path": "answer",
+  "cases": [
+    {
+      "id": "contact",
+      "question": "How can I contact you?",
+      "sample_answer": "You can email hello@javor.example or use our contact form.",
+      "must_contain": [
+        "hello@javor.example"
+      ]
+    },
+    {
+      "id": "service",
+      "question": "Do you build online shops?",
+      "sample_answer": "Yes, we build websites and online shops.",
+      "must_contain": [
+        "online shops"
+      ]
+    },
+    {
+      "id": "location",
+      "question": "Where are you based?",
+      "sample_answer": "Our studio is based in Brno.",
+      "must_contain": [
+        "Brno"
+      ]
+    },
+    {
+      "id": "maintenance",
+      "question": "Does maintenance include content updates?",
+      "sample_answer": "Content updates are included by agreement.",
+      "must_contain": [
+        "by agreement"
+      ],
+      "must_not_contain": [
+        "automatically includes all content updates"
+      ]
+    },
+    {
+      "id": "unknown-price",
+      "question": "How much is a custom integration?",
+      "sample_answer": "This requires an individual quote.",
+      "must_contain": [
+        "individual quote"
+      ],
+      "must_not_contain": [
+        "fixed price of 99"
+      ]
+    }
+  ]
+}

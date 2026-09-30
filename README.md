@@ -24,6 +24,8 @@ These files contain placeholder URLs and sample answers. Running them without `-
 
 Using n8n? Follow the [step-by-step chatbot webhook regression check](docs/n8n-chatbot-regression-check.md).
 
+Read the [five-question knowledge-base update walkthrough](docs/check-chatbot-after-knowledge-base-update.md), including a deliberately failing offline example and its repaired version.
+
 ## Check your own chatbot endpoint
 
 1. Copy `example.json` to a **private** file such as `my-chatbot.json`.
@@ -83,7 +85,7 @@ Set `live: 'true'` only for an endpoint you own or are authorized to test. Put c
 
 **BotEffex Monitor** is a separate hosted service: approved daily checks, email alerts and 30-day history. Request a **14-day assisted trial with no card**; it begins after we verify a working connection. The hosted pilot supports public HTTPS endpoints returning JSON without credentials. This is narrower than the free kit's authentication options.
 
-Starter continuation is optional, €19/month for one chatbot and up to 10 questions; Paddle shows the final total and renewal terms. An optional **one-off setup service has a proposed €99 pilot price**, subject to a confirmed quote, tax treatment, scope and date. It does not create a subscription and has no dedicated checkout yet.
+Starter continuation is optional, €19/month for one chatbot and up to 10 questions; Paddle shows the final total and renewal terms. Optional **one-off setup is €99**, with tax included in the configured EUR price. We confirm compatibility, scope and delivery date before supplying a separate Paddle payment link. Paddle shows the final total and tax treatment. Setup has no renewal and does not create a subscription.
 
 | Language | Free trial | Setup offer | Illustrative report | Repository documents |
 |---|---|---|---|---|

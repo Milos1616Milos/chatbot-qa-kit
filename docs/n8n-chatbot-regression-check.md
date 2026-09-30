@@ -59,4 +59,6 @@ For a bearer token, set `request.bearer_token_env` to the **name** of an environ
 
 For a chatbot project on GitHub, use the [GitHub Action example in the README](../README.md#use-it-as-a-github-action). Begin with an offline check in a private repository. Turn on live calls only after you have confirmed the endpoint, secrets, and expected call volume. You can then run the same check when you change your workflow or on a schedule.
 
-If you maintain several client chatbots and want daily checks with history and email alerts without operating the workflow yourself, the separate [managed Monitor pilot form](https://github.com/Milos1616Milos/chatbot-qa-kit/issues/new?template=managed-monitor-pilot.yml) collects interest. The hosted service is still being tested; the form is not a purchase.
+For approved daily checks with history and email alerts, request a [14-day assisted Monitor trial](https://monitor.boteffex.eu/trial). The hosted pilot supports public HTTPS JSON endpoints without credentials. Optional [one-time setup](https://monitor.boteffex.eu/en/setup.html) is separate from the voluntary monthly Starter plan.
+
+See the [five-question before/after walkthrough](check-chatbot-after-knowledge-base-update.md) for a runnable fictional failure and repair.

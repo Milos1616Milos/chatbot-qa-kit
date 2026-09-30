@@ -11,7 +11,7 @@ Má váš chatbot po změně webu, ceníku nebo znalostní databáze stále spr�
 5. **Ručně připravený vstupní report** s otázkami, pravidly, výsledky, omezeními a doporučeními.
 6. **Jedno kolo úprav otázek a pravidel** do sedmi kalendářních dnů od předání, nejvýše 10 otázek celkem.
 
-**99 € je navrhovaná jednorázová pilotní cena.** Před objednávkou potvrdíme konečnou cenu, daňový režim, rozsah a termín. Službu domlouváme e-mailem. Platební produkt pro ni zatím není vytvořený; stávající platba Starter patří měsíčnímu předplatnému Monitora.
+**99 € je jednorázová cena standardního balíčku**, s daní zahrnutou v nastavené ceně EUR. Před platbou e-mailem potvrdíme kompatibilitu, rozsah a termín. Poté zašleme samostatný jednorázový platební odkaz Paddle. Konečnou částku a daňový režim zobrazí Paddle. Nákup se neobnovuje a neaktivuje Starter.
 
 ## Vhodnost a rozsah
 
@@ -39,3 +39,6 @@ Miloš Brisuda · BotEffex Monitor
 [Chatbot check setup (en)](https://monitor.boteffex.eu/en/setup.html) · [Nastavení kontrol (cs)](https://monitor.boteffex.eu/cs/setup.html) · [Nastavenie kontrol (sk)](https://monitor.boteffex.eu/sk/setup.html)
 
 [Bezplatná zkouška](https://monitor.boteffex.eu/cs/trial.html)
+
+
+[Setup terms](https://monitor.boteffex.eu/cs/setup-terms.html)

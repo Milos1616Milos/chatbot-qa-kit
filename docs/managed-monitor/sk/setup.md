@@ -19,7 +19,7 @@ Agentúre alebo firme, ktorá prevádzkuje textový chatbot, vie sprístupniť k
 5. **Stručný vstupný report.** Otázky, očakávania, výsledky, obmedzenia a odporúčané ďalšie kroky. Ide o pripravený dokument, nie o automatický agentúrny report v aplikácii.
 6. **Jedno kolo úprav otázok a pravidiel.** Najviac desať otázok celkovo, v rámci siedmich kalendárnych dní od odovzdania. Nezahŕňa opravu samotného chatbota ani nové integrácie.
 
-**99 € je navrhovaná pilotná cena na overenie záujmu.** Pred objednávkou pošleme konkrétnu ponuku s konečnou cenou, daňovým režimom, rozsahom a termínom. Nejde o už vytvorený produkt v Paddle. Existujúca platba Starter je mesačné predplatné Monitora a nie je platbou za túto službu.
+**99 € je jednorazová cena štandardného balíka**, s daňou zahrnutou v nastavenej cene EUR. Pred platbou e-mailom potvrdíme kompatibilitu, rozsah a termín. Potom zašleme samostatný jednorazový platobný odkaz Paddle. Konečnú sumu a daňový režim zobrazí Paddle. Nákup sa neobnovuje a neaktivuje Starter.
 
 ## Skúška Monitora zostáva zdarma
 
@@ -50,3 +50,6 @@ Miloš Brisuda · BotEffex Monitor
 [Chatbot check setup (en)](https://monitor.boteffex.eu/en/setup.html) · [Nastavení kontrol (cs)](https://monitor.boteffex.eu/cs/setup.html) · [Nastavenie kontrol (sk)](https://monitor.boteffex.eu/sk/setup.html)
 
 [Bezplatná skúška](https://monitor.boteffex.eu/sk/trial.html)
+
+
+[Setup terms](https://monitor.boteffex.eu/sk/setup-terms.html)

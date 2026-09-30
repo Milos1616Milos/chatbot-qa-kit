@@ -11,7 +11,7 @@ Keep track of important answers after changes to your website, prices or knowled
 5. **A concise manually prepared report** of questions, rules, results, limitations and recommended actions.
 6. **One revision of questions and rules** within seven calendar days of delivery, with a maximum of 10 questions overall.
 
-**€99 is the proposed one-off pilot price.** Before ordering, you receive a specific quote confirming the final price, tax treatment, scope and delivery date. This service is arranged by email. Its payment product has not been created; the existing Starter checkout is for the monthly Monitor subscription.
+**€99 is the one-time standard package price**, with tax included in the configured EUR price. Before payment, we confirm compatibility, scope and delivery date by email. We then supply a separate one-time Paddle payment link. Paddle shows the final payable total and tax treatment. This purchase has no renewal and does not activate Starter.
 
 ## Compatibility and scope
 
@@ -39,3 +39,6 @@ Miloš Brisuda · BotEffex Monitor
 [Chatbot check setup (en)](https://monitor.boteffex.eu/en/setup.html) · [Nastavení kontrol (cs)](https://monitor.boteffex.eu/cs/setup.html) · [Nastavenie kontrol (sk)](https://monitor.boteffex.eu/sk/setup.html)
 
 [Free trial](https://monitor.boteffex.eu/trial)
+
+
+[Setup terms](https://monitor.boteffex.eu/en/setup-terms.html)
