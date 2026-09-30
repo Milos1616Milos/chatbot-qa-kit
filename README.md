@@ -81,8 +81,18 @@ Set `live: 'true'` only for an endpoint you own or are authorized to test. Put c
 
 ## Managed daily monitoring
 
-A separate hosted **Chatbot Monitor** is being tested. The intended paid service runs approved checks every day, keeps history, and emails when an answer breaks or recovers. It is **not open for customer purchases yet**. If you build or operate an HTTP chatbot and want to try the private pilot, [open a public issue](https://github.com/Milos1616Milos/chatbot-qa-kit/issues/new?template=managed-monitor-pilot.yml) titled `Managed Monitor pilot interest` and describe your endpoint type **without posting URLs, tokens, or customer data**. This is an expression of interest, not a checkout or a promise of access.
+**BotEffex Monitor** is a separate hosted service: approved daily checks, email alerts and 30-day history. Request a **14-day assisted trial with no card**; it begins after we verify a working connection. The hosted pilot supports public HTTPS endpoints returning JSON without credentials. This is narrower than the free kit's authentication options.
+
+Starter continuation is optional, €19/month for one chatbot and up to 10 questions; Paddle shows the final total and renewal terms. An optional **one-off setup service has a proposed €99 pilot price**, subject to a confirmed quote, tax treatment, scope and date. It does not create a subscription and has no dedicated checkout yet.
+
+| Language | Free trial | Setup offer | Illustrative report | Repository documents |
+|---|---|---|---|---|
+| English | [Trial](https://monitor.boteffex.eu/trial) | [Offer](https://monitor.boteffex.eu/en/setup.html) | [Sample](https://monitor.boteffex.eu/en/sample-report.html) | [Docs](docs/managed-monitor/en/setup.md) |
+| Čeština | [Zkouška](https://monitor.boteffex.eu/cs/trial.html) | [Nabídka](https://monitor.boteffex.eu/cs/setup.html) | [Ukázka](https://monitor.boteffex.eu/cs/sample-report.html) | [Dokumenty](docs/managed-monitor/cs/setup.md) |
+| Slovenčina | [Skúška](https://monitor.boteffex.eu/sk/trial.html) | [Ponuka](https://monitor.boteffex.eu/sk/setup.html) | [Ukážka](https://monitor.boteffex.eu/sk/sample-report.html) | [Dokumenty](docs/managed-monitor/sk/setup.md) |
+
+Sample report answers and results are fictional; they are not customer measurements. Reports for the setup service are manually prepared. Automatic client report export and a multi-client agency dashboard are not current features. Contact [info@marketingsrdcem.com](mailto:info@marketingsrdcem.com) to discuss compatibility and a quote. Never post credentials or customer data in public issues.
 
 ## License and support
 
-MIT license. The kit is provided as-is. To report a bug, open an issue with a minimal redacted config and the error message. Never post credentials or customer data. The hosted service, when ready, will be a separate product; its private code is not in this repository.
+MIT license. The kit is provided as-is. To report a bug, open an issue with a minimal redacted config and the error message. Never post credentials or customer data. The hosted service is a separate product; its private code is not in this repository.
